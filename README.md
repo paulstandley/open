@@ -1,6 +1,12 @@
 # Paul Standley
 
-## Bash
+![profile](profile.png)
+
+## OPEN
+
+![open](open.png)
+
+### Bash
 
 ```BASH
 
