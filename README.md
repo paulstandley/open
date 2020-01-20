@@ -8,9 +8,9 @@
 
 ---
 
-Laravel __6__ setup
+### Laravel __6__ setup
 
-### **BASH**
+#### **Bash Setup**
 
 ```BASH
 
@@ -25,5 +25,15 @@ php artisan ui react --auth
 npm install && npm run dev
 
 npm run watch
+
+```
+
+### Conrtrollers Models Migrations
+
+#### **Bash Controllers**
+
+```BASH
+
+php artisan make:controller ProfileController -r -m
 
 ```
