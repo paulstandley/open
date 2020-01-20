@@ -1,10 +1,10 @@
 # Paul Standley
 
-![profile](profile.png)
+![profile](img/profile.png)
 
 ## OPEN
 
-![open](open.png)
+![open](img/open.png)
 
 ### Bash
 
