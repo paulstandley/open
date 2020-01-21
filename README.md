@@ -38,4 +38,8 @@ php artisan make:controller ProfileController -r
 
 php artisan make:model Profile -m
 
+php artisan make:controller PostsController -r
+
+php artisan make:model Post -m
+
 ```
