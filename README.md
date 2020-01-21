@@ -42,4 +42,8 @@ php artisan make:controller PostsController -r
 
 php artisan make:model Post -m
 
+php artisan make:controller FollowsController
+
+php artisan make:migration creates_profile_user_pivot_table --create profile_user
+
 ```
