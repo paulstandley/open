@@ -48,4 +48,6 @@ php artisan make:migration creates_profile_user_pivot_table --create profile_use
 
 php artisan make:mail NewUserWelcomeMail -m emails.welcome-email
 
+php artisan storeage:link
+
 ```
