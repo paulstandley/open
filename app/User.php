@@ -2,7 +2,9 @@
 
 namespace App;
 
+use App\Mail\NewUserWelcomeMail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'username', 'email', 'password',
     ];
 
     /**
@@ -36,4 +38,54 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+    * The function returns boot model.
+    *
+    * @var $user 
+    * @return $user $user->email
+    */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function($user)
+        {
+            $user->profile()->create([
+                'title' => $user->username,
+            ]);
+
+            Mail::to($user->email)->send(new NewUserWelcomeMail);
+        });
+    }
+ 
+    /**
+    * The function returns post model relaysionship.
+    *
+    * @return Post
+    */
+    public function posts() 
+    {
+        return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
+    }
+
+    /**
+    * The function that returns the model for the profile relaysionship.
+    *
+    * @return Profile
+    */
+    public function following() 
+    {
+        return $this->belongsToMany(Profile::class);
+    }
+
+    /**
+    * The function returns profile model relaysionship.
+    *
+    * @return Profile
+    */
+    public function profile() 
+    {
+        return $this->hasOne(Profile::class);
+    }
 }
