@@ -50,4 +50,6 @@ php artisan make:mail NewUserWelcomeMail -m emails.welcome-email
 
 php artisan storeage:link
 
+php artisan make:policy ProfilePolicy -m Profile
+
 ```
