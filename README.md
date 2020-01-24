@@ -52,4 +52,6 @@ php artisan storeage:link
 
 php artisan make:policy ProfilePolicy -m Profile
 
+composer require intervention/image
+
 ```
