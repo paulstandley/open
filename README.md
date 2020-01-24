@@ -56,4 +56,6 @@ composer require intervention/image
 
 composer require guzzlehttp/guzzle
 
+php artisan migrate
+
 ```
