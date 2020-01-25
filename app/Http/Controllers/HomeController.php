@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,11 +18,11 @@ class HomeController extends Controller
 
     /**
      * Show the application dashboard.
-     * @var $user
+     *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(User $user)
+    public function index()
     {
-        return view('profile/{$user}');
+        return view('/');
     }
 }
