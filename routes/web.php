@@ -18,6 +18,8 @@ Route::get('/email', function() {
   return new NewUserWelcomeMail();
 });
 
+Route::get('folling/{user}', 'FollowsController@index');
+
 Route::post('follow/{user}', 'FollowsController@store');
 
 Route::get('/', 'PostsController@index');

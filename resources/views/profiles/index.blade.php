@@ -10,7 +10,7 @@
            <div class="d-flex justify-content-between align-items-baseline">
                 <h2>{{  $user->username  }}</h2>
                <div id="buttonId">
-                   <?php echo $follows; echo $user->id; ?>
+                
                </div>
                 @can ('update', $user->profile)
                     <a class="btn btn-primary" href="/profile/{{  $user->id  }}/edit">Edit Profile</a>

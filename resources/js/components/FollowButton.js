@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 class FollowButton extends Component {
@@ -7,12 +7,19 @@ class FollowButton extends Component {
         this.state = { 
             follow: false
          }
+         console.log(props);
+    }
+
+    componentDidMount() {
+        axios.get('/folling/' + 1).then(response => {
+            console.log(response);
+        })
     }
 
     followUser() {
-        axios.post('/follow/' + this.userId).then(resonse => {
+        axios.post('/follow/' + 1).then(resonse => {
             if(this.state.follow) {
-                this.setState({follow: true})
+                this.setState({follow: !follow})
             }
             console.log(resonse);
         }).catch(errors => {
@@ -25,7 +32,7 @@ class FollowButton extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <buuton onClick={followUser}>{this.state.follow ? 'Unfollow' : 'Follow'}</buuton>
+                <button className="btn btn-primary" onClick={this.followUser}>{this.state.follow ? 'Unfollow' : 'Follow'}</button>
             </React.Fragment>
          );
     }
