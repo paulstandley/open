@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+  <?php dd($posts); ?>
   @foreach ($posts as $post)
     <div class="row post_section p-4">
       <div class="col-8">
