@@ -18,9 +18,9 @@ composer create-project --prefer-dist laravel/laravel open
 
 composer require laravel/ui --dev
 
-php artisan ui react
+php artisan ui view
 
-php artisan ui react --auth
+php artisan ui view --auth
 
 npm install && npm run dev
 
